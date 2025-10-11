@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sécurité sur Chantier : Les Erreurs à Éviter - ENERGY SKILLS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #1d3557;
+        }
+
+        .logo span {
+            margin-left: 10px;
+        }
+
+        .back-btn {
+            background: #1d3557;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #e63946;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, #1d3557, #457b9d);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Article Content */
+        .article-content {
+            background: white;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e63946, #f4a261);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .article-body h2 {
+            color: #1d3557;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .article-body h3 {
+            color: #457b9d;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .competence-card {
+            background: #f8f9fa;
+            border-left: 4px solid #e63946;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .competence-card h4 {
+            color: #1d3557;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-bottom: 3rem;
+        }
+
+        .related-articles h2 {
+            color: #1d3557;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-card-image {
+            height: 200px;
+            background: linear-gradient(135deg, #457b9d, #1d3557);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .article-card-content {
+            padding: 1.5rem;
+        }
+
+        .article-card h3 {
+            color: #1d3557;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .article-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1d3557;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #f1faee;
+        }
+
+        .footer-section a {
+            color: #a8dadc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #e63946;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #457b9d;
+            color: #a8dadc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2rem;
+            }
+            
+            .article-content {
+                padding: 2rem;
+            }
+            
+            .article-image {
+                height: 250px;
+                font-size: 3rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header {
+                padding: 2rem 0;
+            }
+            
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .article-content {
+                padding: 1.5rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 100 100">
+                        <polygon points="20,80 50,20 50,50 80,80" fill="#e63946"/>
+                        <rect x="30" y="60" width="15" height="20" fill="#1d3557"/>
+                        <rect x="55" y="60" width="15" height="20" fill="#1d3557"/>
+                    </svg>
+                    <span>ENERGY SKILLS</span>
+                </div>
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Retour au blog
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <div class="container">
+            <h1>Sécurité sur Chantier : Les Erreurs à Éviter</h1>
+            <p>Protégez vos équipes et votre entreprise en évitant ces erreurs courantes sur les chantiers</p>
+            <div class="article-meta">
+                <div class="meta-item">
+                    <i class="far fa-calendar"></i>
+                    <span>28 Septembre 2025</span>
+                </div>
+                <div class="meta-item">
+                    <i class="far fa-clock"></i>
+                    <span>6 min de lecture</span>
+                </div>
+                <div class="meta-item">
+                    <i class="far fa-folder"></i>
+                    <span>Sécurité, Chantier</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <div class="container">
+        <article class="article-content">
+            <div class="article-image">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            
+            <div class="article-body">
+                <p>La sécurité sur les chantiers n'est pas seulement une obligation légale, c'est une nécessité absolue pour protéger la vie des travailleurs et la pérennité des entreprises. Malheureusement, certaines erreurs persistent et mettent en danger l'ensemble des intervenants.</p>
+
+                <h2>L'importance d'une culture sécurité solide</h2>
+                <p>Une entreprise qui valorise la sécurité construit non seulement un environnement de travail plus sain, mais améliore également sa productivité et sa réputation. Les accidents coûtent cher, tant sur le plan humain que financier.</p>
+
+                <div class="competence-card">
+                    <h4>1. Négligence des Équipements de Protection Individuelle (EPI)</h4>
+                    <p>Le port incorrect ou l'absence d'EPI reste l'erreur la plus fréquente et la plus dangereuse sur les chantiers.</p>
+                    <ul>
+                        <li>Casques non portés dans les zones à risque</li>
+                        <li>Chaussures de sécurité inadaptées</li>
+                        <li>Absence de protection auditive en environnement bruyant</li>
+                        <li>Gants non utilisés pour la manipulation d'objets coupants</li>
+                        <li>Lunettes de protection négligées lors des travaux de meulage</li>
+                    </ul>
+                    <p><strong>Solution :</strong> Former systématiquement à l'importance des EPI et mettre en place des contrôles réguliers.</p>
+                </div>
+
+                <div class="competence-card">
+                    <h4>2. Mauvais Aménagement des Zones de Travail</h4>
+                    <p>Un chantier mal organisé est un chantier dangereux. La circulation, le stockage et les zones de travail doivent être clairement définis.</p>
+                    <ul>
+                        <li>Passages encombrés par des matériaux</li>
+                        <li>Signalisation insuffisante des zones dangereuses</li>
+                        <li>Absence de dégagements d'urgence</li>
+                        <li>Stockage instable d'outils et matériaux</li>
+                        <li>Éclairage insuffisant dans les zones de travail</li>
+                    </ul>
+                    <p><strong>Solution :</strong> Établir un plan d'implantation clair et le faire respecter rigoureusement.</p>
+                </div>
+
+                <div class="competence-card">
+                    <h4>3. Sous-estimation des Risques Électriques</h4>
+                    <p>L'électricité représente l'un des dangers les plus mortels sur les chantiers, et pourtant elle est souvent traitée avec négligence.</p>
+                    <ul>
+                        <li>Utilisation d'outils électriques défectueux</li>
+                        <li>Absence de mise à la terre des installations</li>
+                        <li>Travaux à proximité de lignes électriques sans précautions</li>
+                        <li>Câbles d'alimentation posés au sol sans protection</li>
+                        <li>Interventions sur des circuits sous tension sans autorisation</li>
+                    </ul>
+                    <p><strong>Solution :</strong> Former spécifiquement aux risques électriques et mettre en place des procédures de consignation strictes.</p>
+                </div>
+
+                <div class="competence-card">
+                    <h4>4. Manque de Formation aux Procédures d'Urgence</h4>
+                    <p>En cas d'accident, chaque seconde compte. L'improvisation n'a pas sa place dans la gestion des urgences.</p>
+                    <ul>
+                        <li>Équipes ne connaissant pas les issues de secours</li>
+                        <li>Absence de formation aux premiers secours</li>
+                        <li>Numéros d'urgence non affichés visiblement</li>
+                        <li>Exercices d'évacuation non réalisés</li>
+                        <li>Trousse de secours incomplète ou inaccessible</li>
+                    </ul>
+                    <p><strong>Solution :</strong> Organiser des formations régulières et des exercices pratiques d'urgence.</p>
+                </div>
+
+                <div class="competence-card">
+                    <h4>5. Communication Insuffisante</h4>
+                    <p>Une mauvaise communication est souvent à l'origine d'accidents évitables.</p>
+                    <ul>
+                        <li>Briefings de sécurité quotidiens non effectués</li>
+                        <li>Information insuffisante sur les risques spécifiques</li>
+                        <li>Absence de signalement des situations dangereuses</li>
+                        <li>Langues différentes non prises en compte</li>
+                        <li>Consignes de sécurité non comprises par tous</li>
+                    </ul>
+                    <p><strong>Solution :</strong> Mettre en place un système de communication multilingue et des réunions sécurité régulières.</p>
+                </div>
+
+                <h2>Bonnes Pratiques à Mettre en Œuvre</h2>
+                <p>Pour éviter ces erreurs, adoptez une approche proactive de la sécurité :</p>
+                <ul>
+                    <li><strong>Planification rigoureuse :</strong> Anticipez les risques avant le début des travaux</li>
+                    <li><strong>Formation continue :</strong> Investissez dans la compétence sécurité de vos équipes</li>
+                    <li><strong>Contrôle régulier :</strong> Vérifiez l'application des consignes quotidiennement</li>
+                    <li><strong>Retour d'expérience :</strong> Analysez les incidents pour améliorer les pratiques</li>
+                    <li><strong>Implication de tous :</strong> Faites de la sécurité l'affaire de chaque intervenant</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>La sécurité sur chantier n'est pas une contrainte, mais un investissement rentable. En évitant ces erreurs courantes, vous protégez vos collaborateurs, préservez votre entreprise et améliorez votre productivité.</p>
+
+                <p>Chez ENERGY SKILLS, nous proposons des formations complètes en sécurité industrielle et habitation électrique pour vous aider à créer une culture sécurité solide dans votre organisation.</p>
+            </div>
+        </article>
+
+        <!-- Related Articles -->
+      
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ENERGY SKILLS</h3>
+                    <p>Des compétences solides pour un avenir durable</p>
+                    <p>Formation et coaching professionnels depuis 2017.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Lotissement Es-Salaam, El Jadida</p>
+                    <p><i class="fas fa-phone"></i> 05 23 35 56 61</p>
+                    <p><i class="fas fa-envelope"></i> m.energy.skills@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 ENERGY SKILLS. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script simple pour la page d'article
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ajouter la date actuelle si nécessaire
+            const dateElement = document.querySelector('.meta-item:first-child span');
+            if (dateElement) {
+                // Vous pouvez personnaliser la date ici
+            }
+        });
+    </script>
+</body>
+</html>

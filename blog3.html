@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Préventive : Réduire les Coûts et Augmenter la Productivité - ENERGY SKILLS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #1d3557;
+        }
+
+        .logo span {
+            margin-left: 10px;
+        }
+
+        .back-btn {
+            background: #1d3557;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #e63946;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, #1d3557, #457b9d);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Article Content */
+        .article-content {
+            background: white;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e63946, #f4a261);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .article-body h2 {
+            color: #1d3557;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .article-body h3 {
+            color: #457b9d;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .competence-card {
+            background: #f8f9fa;
+            border-left: 4px solid #e63946;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .competence-card h4 {
+            color: #1d3557;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-bottom: 3rem;
+        }
+
+        .related-articles h2 {
+            color: #1d3557;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-card-image {
+            height: 200px;
+            background: linear-gradient(135deg, #457b9d, #1d3557);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .article-card-content {
+            padding: 1.5rem;
+        }
+
+        .article-card h3 {
+            color: #1d3557;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .article-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1d3557;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #f1faee;
+        }
+
+        .footer-section a {
+            color: #a8dadc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #e63946;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #457b9d;
+            color: #a8dadc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2rem;
+            }
+            
+            .article-content {
+                padding: 2rem;
+            }
+            
+            .article-image {
+                height: 250px;
+                font-size: 3rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header {
+                padding: 2rem 0;
+            }
+            
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .article-content {
+                padding: 1.5rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 100 100">
+                        <polygon points="20,80 50,20 50,50 80,80" fill="#e63946"/>
+                        <rect x="30" y="60" width="15" height="20" fill="#1d3557"/>
+                        <rect x="55" y="60" width="15" height="20" fill="#1d3557"/>
+                    </svg>
+                    <span>ENERGY SKILLS</span>
+                </div>
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Retour au blog
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <div class="container">
+            <h1>Maintenance Préventive : Réduire les Coûts et Augmenter la Productivité</h1>
+            <p>Découvrez comment une stratégie de maintenance préventive bien planifiée peut transformer votre entreprise</p>
+            <div class="article-meta">
+                <div class="meta-item">
+                    <i class="far fa-calendar"></i>
+                    <span>15 Septembre 2025</span>
+                </div>
+                <div class="meta-item">
+                    <i class="far fa-clock"></i>
+                    <span>7 min de lecture</span>
+                </div>
+                <div class="meta-item">
+                    <i class="far fa-folder"></i>
+                    <span>Maintenance, Productivité</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <div class="container">
+        <article class="article-content">
+            <div class="article-image">
+                <i class="fas fa-wrench"></i>
+            </div>
+            
+            <div class="article-body">
+                <p>Dans l'industrie moderne, la maintenance préventive n'est plus une option mais une nécessité stratégique. Les entreprises qui adoptent une approche proactive de la maintenance constatent des améliorations significatives de leur productivité et de leur rentabilité.</p>
+
+                <h2>La Maintenance Préventive : Un Investissement Rentable</h2>
+                <p>Contrairement aux idées reçues, la maintenance préventive ne représente pas un coût supplémentaire, mais un investissement qui génère des retours substantiels. En anticipant les pannes, vous évitez les arrêts de production coûteux et prolongez la durée de vie de vos équipements.</p>
+
+                <div class="competence-card">
+                    <h4>1. Planification Stratégique des Interventions</h4>
+                    <p>Une maintenance préventive efficace commence par une planification rigoureuse adaptée à chaque équipement.</p>
+                    <ul>
+                        <li>Établissement de calendriers de maintenance basés sur l'utilisation réelle</li>
+                        <li>Identification des composants critiques nécessitant une attention particulière</li>
+                        <li>Intégration des contraintes de production dans la planification</li>
+                        <li>Utilisation d'outils de GMAO (Gestion de Maintenance Assistée par Ordinateur)</li>
+                        <li>Mise en place de stocks stratégiques de pièces de rechange</li>
+                    </ul>
+                    <p><strong>Bénéfice :</strong> Réduction de 40% des pannes imprévues et optimisation des temps d'intervention.</p>
+                </div>
+
+                <div class="competence-card">
+                    <h4>2. Surveillance et Monitoring en Temps Réel</h4>
+                    <p>Les technologies modernes permettent de surveiller l'état des équipements en continu.</p>
+                    <ul>
+                        <li>Installation de capteurs de vibration, température et pression</li>
+                        <li>Analyse d'huile et de lubrifiants pour détecter l'usure</li>
+                        <li>Surveillance des courbes de consommation énergétique</li>
+                        <li>Utilisation de la thermographie pour identifier les points chauds</li>
+                        <li>Alertes automatiques en cas de dépassement des seuils critiques</li>
+                    </ul>
+                    <p><strong>Bénéfice :</strong> Détection précoce des anomalies avant qu'elles ne deviennent des pannes majeures.</p>
+                </div>
+
+                <div class="competence-card">
+                    <h4>3. Formation et Implication des Équipes</h4>
+                    <p>Le succès d'un programme de maintenance préventive dépend largement des compétences et de l'implication du personnel.</p>
+                    <ul>
+                        <li>Formation spécifique aux techniques de diagnostic préventif</li>
+                        <li>Implémentation de procédures standardisées pour chaque type d'intervention</li>
+                        <li>Création de fiches de poste détaillant les contrôles à effectuer</li>
+                        <li>Mise en place d'un système de reporting des anomalies observées</li>
+                        <li>Reconnaissance des équipes pour leurs contributions à l'amélioration</li>
+                    </ul>
+                    <p><strong>Bénéfice :</strong> Augmentation de 60% de l'efficacité des interventions et réduction des erreurs humaines.</p>
+                </div>
+
+                <div class="competence-card">
+                    <h4>4. Analyse des Données et Amélioration Continue</h4>
+                    <p>Les données collectées lors des maintenances préventives sont une mine d'or pour l'optimisation.</p>
+                    <ul>
+                        <li>Suivi des indicateurs clés de performance (KPI) de maintenance</li>
+                        <li>Analyse des causes racines des pannes récurrentes</li>
+                        <li>Calcul du TRS (Taux de Rendement Synthétique) des équipements</li>
+                        <li>Évaluation du coût total de possession des machines</li>
+                        <li>Benchmarking des performances avec les standards du secteur</li>
+                    </ul>
+                    <p><strong>Bénéfice :</strong> Prise de décisions éclairées pour l'investissement et l'optimisation du parc machines.</p>
+                </div>
+
+                <div class="competence-card">
+                    <h4>5. Intégration avec les Autres Départements</h4>
+                    <p>La maintenance ne doit pas fonctionner en silo mais en étroite collaboration avec les autres services.</p>
+                    <ul>
+                        <li>Coordination avec la production pour planifier les arrêts maintenance</li>
+                        <li>Collaboration avec les achats pour l'optimisation des stocks</li>
+                        <li>Échanges avec la qualité pour améliorer la fiabilité des processus</li>
+                        <li>Participation aux projets d'amélioration continue (Kaizen, 5S)</li>
+                        <li>Communication régulière avec la direction sur les performances</li>
+                    </ul>
+                    <p><strong>Bénéfice :</strong> Alignement stratégique et optimisation globale des performances de l'entreprise.</p>
+                </div>
+
+                <h2>Calcul du Retour sur Investissement</h2>
+                <p>Pour convaincre la direction de l'importance de la maintenance préventive, il est essentiel de quantifier les bénéfices :</p>
+                <ul>
+                    <li><strong>Réduction des coûts de réparation :</strong> Jusqu'à 50% de diminution des réparations majeures</li>
+                    <li><strong>Augmentation de la disponibilité :</strong> Gain de 15-20% du temps de production</li>
+                    <li><strong>Économies énergétiques :</strong> 10-15% de réduction de la consommation</li>
+                    <li><strong>Prolongation de la durée de vie :</strong> Augmentation de 30-40% de la longévité des équipements</li>
+                    <li><strong>Réduction des stocks :</strong> Optimisation de 25% du stock de pièces de rechange</li>
+                </ul>
+
+                <h2>Étapes de Mise en Œuvre</h2>
+                <p>Pour réussir l'implantation d'un programme de maintenance préventive :</p>
+                <ol>
+                    <li><strong>Audit initial :</strong> Évaluer l'état actuel du parc machines et des pratiques</li>
+                    <li><strong>Priorisation :</strong> Identifier les équipements critiques pour commencer</li>
+                    <li><strong>Formation :</strong> Préparer les équipes aux nouvelles méthodes</li>
+                    <li><strong>Pilotage :</strong> Démarrer avec un projet pilote sur une ligne de production</li>
+                    <li><strong>Mesure :</strong> Suivre les indicateurs et ajuster le programme</li>
+                    <li><strong>Généralisation :</strong> Étendre progressivement à l'ensemble du parc</li>
+                </ol>
+
+                <h2>Conclusion</h2>
+                <p>La maintenance préventive n'est pas une dépense, mais un levier de compétitivité puissant. En transformant votre approche de la maintenance, vous créez une entreprise plus résiliente, plus productive et plus rentable.</p>
+
+                <p>Chez ENERGY SKILLS, nous accompagnons les entreprises dans la mise en place de programmes de maintenance préventive sur mesure, avec des formations pratiques et un coaching terrain pour garantir des résultats durables.</p>
+            </div>
+        </article>
+
+        <!-- Related Articles -->
+      
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ENERGY SKILLS</h3>
+                    <p>Des compétences solides pour un avenir durable</p>
+                    <p>Formation et coaching professionnels depuis 2017.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Lotissement Es-Salaam, El Jadida</p>
+                    <p><i class="fas fa-phone"></i> 05 23 35 56 61</p>
+                    <p><i class="fas fa-envelope"></i> m.energy.skills@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 ENERGY SKILLS. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script simple pour la page d'article
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ajouter la date actuelle si nécessaire
+            const dateElement = document.querySelector('.meta-item:first-child span');
+            if (dateElement) {
+                // Vous pouvez personnaliser la date ici
+            }
+        });
+    </script>
+</body>
+</html>

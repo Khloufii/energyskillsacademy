@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les 5 Compétences Clés de l'Électricien Moderne - ENERGY SKILLS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #1d3557;
+        }
+
+        .logo span {
+            margin-left: 10px;
+        }
+
+        .back-btn {
+            background: #1d3557;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #e63946;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, #1d3557, #457b9d);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Article Content */
+        .article-content {
+            background: white;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e63946, #f4a261);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .article-body h2 {
+            color: #1d3557;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .article-body h3 {
+            color: #457b9d;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .competence-card {
+            background: #f8f9fa;
+            border-left: 4px solid #e63946;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .competence-card h4 {
+            color: #1d3557;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-bottom: 3rem;
+        }
+
+        .related-articles h2 {
+            color: #1d3557;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-card-image {
+            height: 200px;
+            background: linear-gradient(135deg, #457b9d, #1d3557);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .article-card-content {
+            padding: 1.5rem;
+        }
+
+        .article-card h3 {
+            color: #1d3557;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .article-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1d3557;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #f1faee;
+        }
+
+        .footer-section a {
+            color: #a8dadc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #e63946;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #457b9d;
+            color: #a8dadc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2rem;
+            }
+            
+            .article-content {
+                padding: 2rem;
+            }
+            
+            .article-image {
+                height: 250px;
+                font-size: 3rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header {
+                padding: 2rem 0;
+            }
+            
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .article-content {
+                padding: 1.5rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 100 100">
+                        <polygon points="20,80 50,20 50,50 80,80" fill="#e63946"/>
+                        <rect x="30" y="60" width="15" height="20" fill="#1d3557"/>
+                        <rect x="55" y="60" width="15" height="20" fill="#1d3557"/>
+                    </svg>
+                    <span>ENERGY SKILLS</span>
+                </div>
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Retour au blog
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <div class="container">
+            <h1>Les 5 Compétences Clés de l'Électricien Moderne</h1>
+            <p>Découvrez les compétences essentielles pour réussir dans l'industrie électrique moderne</p>
+            <div class="article-meta">
+                <div class="meta-item">
+                    <i class="far fa-calendar"></i>
+                    <span>5 Octobre 2025</span>
+                </div>
+                <div class="meta-item">
+                    <i class="far fa-clock"></i>
+                    <span>5 min de lecture</span>
+                </div>
+                <div class="meta-item">
+                    <i class="far fa-folder"></i>
+                    <span>Électricité, Formation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <div class="container">
+        <article class="article-content">
+            <div class="article-image">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            
+            <div class="article-body">
+                <p>Dans un monde où la technologie évolue à un rythme effréné, le métier d'électricien connaît une transformation profonde. Les compétences traditionnelles restent importantes, mais de nouvelles aptitudes sont désormais indispensables pour rester compétitif sur le marché.</p>
+
+                <h2>L'évolution du métier d'électricien</h2>
+                <p>L'électricien d'aujourd'hui n'est plus seulement un technicien qui installe des câbles et des prises. Il devient un expert en solutions énergétiques, un conseiller en efficacité énergétique et un spécialiste des systèmes intelligents.</p>
+
+                <div class="competence-card">
+                    <h4>1. Maîtrise des nouvelles technologies</h4>
+                    <p>La domotique, les systèmes de gestion d'énergie intelligente et les interfaces numériques sont devenus incontournables. L'électricien moderne doit comprendre et installer des systèmes complexes qui intègrent plusieurs technologies.</p>
+                    <ul>
+                        <li>Programmation de systèmes domotiques</li>
+                        <li>Installation de bornes de recharge véhicules électriques</li>
+                        <li>Configuration de systèmes photovoltaïques</li>
+                        <li>Gestion des réseaux intelligents (smart grid)</li>
+                    </ul>
+                </div>
+
+                <div class="competence-card">
+                    <h4>2. Compétences numériques avancées</h4>
+                    <p>Les outils numériques font désormais partie du quotidien. De la lecture de plans sur tablette à l'utilisation d'applications de diagnostic, la maîtrise du digital est essentielle.</p>
+                    <ul>
+                        <li>Utilisation de logiciels de conception électrique</li>
+                        <li>Applications mobiles pour le diagnostic</li>
+                        <li>Gestion de projet avec des outils digitaux</li>
+                        <li>Réalisation de devis numériques</li>
+                    </ul>
+                </div>
+
+                <div class="competence-card">
+                    <h4>3. Expertise en efficacité énergétique</h4>
+                    <p>Avec la transition énergétique, les clients recherchent des solutions économes en énergie. L'électricien doit pouvoir conseiller sur les meilleures options pour réduire la consommation.</p>
+                    <ul>
+                        <li>Audit énergétique des installations</li>
+                        <li>Recommandations d'équipements efficaces</li>
+                        <li>Optimisation des consommations</li>
+                        <li>Solutions de stockage d'énergie</li>
+                    </ul>
+                </div>
+
+                <div class="competence-card">
+                    <h4>4. Compétences en communication et relation client</h4>
+                    <p>Expliquer des concepts techniques à des non-initiés, négocier avec les clients et travailler en équipe sont des compétences tout aussi importantes que les compétences techniques.</p>
+                    <ul>
+                        <li>Communication claire des options techniques</li>
+                        <li>Gestion des attentes client</li>
+                        <li>Travail en équipe pluridisciplinaire</li>
+                        <li>Service client et suivi post-installation</li>
+                    </ul>
+                </div>
+
+                <div class="competence-card">
+                    <h4>5. Adaptabilité et formation continue</h4>
+                    <p>Les normes évoluent, les technologies changent. L'électricien moderne doit constamment se former pour rester à jour et anticiper les nouvelles tendances.</p>
+                    <ul>
+                        <li>Veille technologique régulière</li>
+                        <li>Formations certifiantes continues</li>
+                        <li>Adaptation aux nouvelles réglementations</li>
+                        <li>Apprentissage des nouvelles normes de sécurité</li>
+                    </ul>
+                </div>
+
+                <h2>Conclusion</h2>
+                <p>L'électricien moderne est un professionnel polyvalent qui combine expertise technique traditionnelle et compétences numériques avancées. En développant ces cinq compétences clés, les électriciens peuvent non seulement rester compétitifs mais aussi devenir des leaders dans leur domaine.</p>
+
+                <p>Chez ENERGY SKILLS, nous accompagnons les professionnels dans l'acquisition de ces compétences grâce à nos formations spécialisées et notre coaching personnalisé.</p>
+            </div>
+        </article>
+
+      
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ENERGY SKILLS</h3>
+                    <p>Des compétences solides pour un avenir durable</p>
+                    <p>Formation et coaching professionnels depuis 2017.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Lotissement Es-Salaam, El Jadida</p>
+                    <p><i class="fas fa-phone"></i> 05 23 35 56 61</p>
+                    <p><i class="fas fa-envelope"></i> m.energy.skills@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 ENERGY SKILLS. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script simple pour la page d'article
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ajouter la date actuelle si nécessaire
+            const dateElement = document.querySelector('.meta-item:first-child span');
+            if (dateElement) {
+                // Vous pouvez personnaliser la date ici
+            }
+        });
+    </script>
+</body>
+</html>
