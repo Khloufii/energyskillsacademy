@@ -125,7 +125,7 @@
             // WhatsApp message
             const whatsappMessage = `Bonjour,%0A%0AJe m'appelle ${name}%0ATéléphone: ${phone}%0A${formation ? `Formation souhaitée: ${formation}%0A` : ''}${message ? `Message: ${message}` : ''}`;
             
-            window.open(`https://wa.me/212661529405?text=${whatsappMessage}`, '_blank');
+            window.open(`https://wa.me/212606669409?text=${whatsappMessage}`, '_blank');
             
             // Reset form
             e.target.reset();
