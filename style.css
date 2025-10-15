@@ -402,13 +402,33 @@
 
         .service-card {
             background: white;
-            padding: 2.5rem;
+            padding: 1.5rem;
             border-radius: 20px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
+
+        .service-image {
+    width: 100%;
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden; /* Cache les parties de l'image qui dépassent */
+    border-radius: 8px 8px 0 0; /* Arrondit les coins supérieurs */
+    margin-bottom: 1rem;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image couvre toute la zone sans se déformer */
+    transition: transform 0.3s ease; /* Animation au survol */
+}
+
+/* Effet de zoom au survol */
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
 
         .service-card::before {
             content: '';
@@ -456,66 +476,140 @@
         }
 
         /* Formations Section */
-        .formations {
-            background: var(--light);
-        }
+      /* Formations Section */
+.formations {
+    background: var(--light);
+    padding: 50px 20px;
+}
 
-        .formations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+.formations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
 
-        .formation-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
+.formation-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
 
-        .formation-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
+.formation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
 
-        .formation-image {
-            height: 200px;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-        }
+.formation-header {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
 
-        .formation-content {
-            padding: 2rem;
-        }
+.formation-image {
+    width: 100%;
+    height: 100%;
+}
 
-        .formation-content h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
+.formation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
 
-        .formation-content ul {
-            list-style: none;
-            margin: 1rem 0;
-        }
+.formation-card:hover .formation-image img {
+    transform: scale(1.1);
+}
 
-        .formation-content li {
-            padding: 0.5rem 0;
-            color: #666;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.formation-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
 
-        .formation-content li i {
-            color: var(--primary);
-        }
+.formation-icon i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
+.formation-content {
+    padding: 2rem;
+}
+
+.formation-content h3 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.formation-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.formation-content ul {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.formation-content li {
+    padding: 0.5rem 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.formation-content li i {
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .formations-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .formation-header {
+        height: 180px;
+    }
+    
+    .formation-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .formation-icon i {
+        font-size: 2rem;
+    }
+    
+    .formation-content {
+        padding: 1.5rem;
+    }
+}
         /* Motivation Section */
         .motivation {
             background: var(--secondary);
